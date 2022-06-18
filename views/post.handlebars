@@ -1,0 +1,38 @@
+<div class="card mb-4" style="width: 50rem" id="post" >
+  <div class="card-body px-0 pt-0">
+
+    <div class="bg-dark py-2 px-2 rounded-top">
+      <h5 class="card-title text-white">
+        {{post.post_title}}
+        <span class="right-container">Posted by {{post.user.username}} on {{format_date post.created_at}}</span>
+      </h5>
+    </div>
+
+    <div class="py-2 px-2 rounded-2">
+      <p class="card-text">
+        {{post.post_content}}
+      </p>
+    </div>
+
+  </div>
+</div>
+{{#each comments as |comment|}}
+<div class="card mb-4" style="width: 50rem" id="post" >
+  <div class="card-body px-0 pt-0">
+
+    <div class="bg-dark py-2 px-2 rounded-top">
+      <h5 class="card-title text-white">
+        {{comment.user.username}}
+        <span class="right-container">{{format_date comment.created_at}}</span>
+      </h5>
+    </div>
+
+    <div class="py-2 px-2 rounded-2">
+      <p class="card-text">
+        {{comment.comment_content}}
+      </p>
+    </div>
+
+  </div>
+</div>
+{{/each}}
