@@ -1,0 +1,14 @@
+{{#each posts as |post|}}
+<div class="card" style="width: 50rem" id="post">
+  <div class="card-body px-0 py-0">
+
+    <div class="bg-dark py-2 px-2 rounded-2">
+      <h5 class="card-title text-white">
+        {{post.post_title}}
+        <span class="right-container">{{format_date post.created_at}}</span>
+      </h5>
+    </div>
+
+  </div>
+</div>
+{{/each}}
