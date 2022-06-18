@@ -13,7 +13,11 @@ User.init(
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+            unique: true,
+            validate: {
+                notEmpty: true,
+                isAlphanumeric: true,
+            }
         },
         password: {
             type: DataTypes.STRING,
@@ -30,6 +34,12 @@ User.init(
         underscored: true,
         freezeTableName: true,
         hooks: {
+            beforeBulkCreate(users) {
+                for(let user in users){
+                    user.password = bcrypt.hash(user.password, 10);
+                }
+                return users;
+            },
             beforeCreate(user) {
                 user.password = bcrypt.hash(user.password, 10);
                 return user;
