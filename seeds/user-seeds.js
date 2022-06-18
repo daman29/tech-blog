@@ -7,10 +7,10 @@ const userData = [
   },
   {
     username: "mockuser",
-    password: "password123",
+    password: "password1234",
   }
 ];
 
-const seedUser = () => User.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData);
 
-module.exports = seedUser;
+module.exports = seedUsers;
