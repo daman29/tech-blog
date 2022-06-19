@@ -55,7 +55,7 @@ User.init(
   }
 );
 
-User.prototype.validPassword = function (password) {
+User.prototype.checkPassword = function (password) {
   return bcrypt.compare(password, this.password);
 };
 
