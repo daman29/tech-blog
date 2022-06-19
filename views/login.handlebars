@@ -1,29 +1,42 @@
-<div class="card" style="width: 50rem" id="post">
-  <div class="card-body px-0 pt-0">
+<div class="row">
+  <div class="col-md-6">
+    <h2>Login</h2>
 
-    <div class="bg-dark py-2 px-2 rounded-top">
-      <h5 class="card-title text-white">
-        Login
-      </h5>
-    </div>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h2>Signup</h2>
 
-    <div class="py-2 px-2 rounded-2">
-      <form>
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input type="email" class="form-control" id="username" />
-        </div>
-
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Login</button>
-        <button type="submit" class="btn btn-warning">Register</button>
-
-      </form>
-    </div>
-
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">name:</label>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
   </div>
 </div>
+
+<script src="./js/login.js"></script>
