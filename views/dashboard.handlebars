@@ -1,14 +1,45 @@
-{{#each posts as |post|}}
-<div class="card" style="width: 50rem" id="post">
-  <div class="card-body px-0 py-0">
+{{#if newUser}}
+  <h3>So empty 😔. Create a new post below</h3>
+  <button
+    class="btn btn-primary"
+    data-button="new-post"
+  >Create new post</button>
 
-    <div class="bg-dark py-2 px-2 rounded-2">
-      <h5 class="card-title text-white">
-        {{post.post_title}}
-        <span class="right-container">{{format_date post.created_at}}</span>
-      </h5>
+  <script src="/js/newPost.js"></script>
+
+{{else}}
+  <h3>All Posts by {{username}}</h3>
+  {{#each posts as |post|}}
+    <div class="card" style="width: 50rem" id="post">
+      <div class="card-body px-0 py-0">
+
+        <div class="bg-dark py-2 px-2 rounded-2">
+          <h5 class="card-title text-white">
+            {{post.post_title}}
+            <span class="right-container">{{format_date post.created_at}}</span>
+          </h5>
+
+        </div>
+        <div class="py-2 px-2 rounded-2">
+          <p class="card-text">
+            {{post.post_content}}
+          </p>
+          <button
+            class="btn btn-primary"
+            id="{{post.id}}"
+            data-button="edit"
+          >Edit</button>
+          <button
+            class="btn btn-danger right-container"
+            id="{{post.id}}"
+            data-button="delete"
+          >Delete</button>
+        </div>
+
+      </div>
+
     </div>
+  {{/each}}
 
-  </div>
-</div>
-{{/each}}
+  <script src="/js/edit.js"></script>
+{{/if}}

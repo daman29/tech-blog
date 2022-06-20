@@ -1,0 +1,22 @@
+const router = require("express").Router();
+const { Post } = require("../../models");
+const withAuth = require('../../utils/auth')
+
+router.put('/:id', withAuth, async(req, res) => {
+
+})
+
+router.delete('/:id', withAuth, async(req, res) => {
+    try {
+        const deletedPost = await Post.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+    } catch (error) {
+        
+    }
+    
+})
+
+module.exports = router;

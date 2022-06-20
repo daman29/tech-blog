@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
 
     const postData = await Post.findByPk(req.params.id,{
         include: [
@@ -24,9 +24,6 @@ router.get('/:id', async (req, res) => {
             }
         ]
     })
-
-    console.log(postData);
-    console.log(commentData);
 
     const post = postData.get({ plain: true });
     const comments = commentData.map((val) => val.get({ plain: true }));
