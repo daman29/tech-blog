@@ -1,11 +1,12 @@
 {{#if newUser}}
-  <h3>So empty 😔. Create a new post below</h3>
+  <h3>So empty 😔. Create a new post below!</h3>
+  <a href="/new-post">
   <button
     class="btn btn-primary"
+    data-button="create"
     data-button="new-post"
   >Create new post</button>
-
-  <script src="/js/newPost.js"></script>
+  </a>
 
 {{else}}
   <h3>All Posts by {{username}}</h3>

@@ -56,7 +56,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
     let newUser = false;
 
     if (postData.length === 0) {
-      console.log("newuser")
       newUser = true;
       res.render("dashboard", {
         newUser,
@@ -79,5 +78,11 @@ router.get("/dashboard", withAuth, async (req, res) => {
     res.status(400).json(error);
   }
 });
+
+router.get("/new-post", withAuth, (req, res) => {
+  res.render("new-post", {
+    logged_in: req.session.logged_in,
+  });
+})
 
 module.exports = router;
