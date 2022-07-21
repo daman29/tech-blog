@@ -4,7 +4,7 @@ const postFormHandler = async (event) => {
     // Collect values from the login form
     const title = document.querySelector("#post-title").value.trim();
     const content = document.querySelector("#post-content").value.trim();
-    const postId = document.querySelector("#post-id").value;
+    const postId = document.location.pathname.split("/")[2];
   
     console.log(title, content, postId);
   
