@@ -1,21 +1,43 @@
-{{#each posts as |post|}}
-<div class="card mb-4" style="width: 50rem" id="post" >
-  <div class="card-body px-0 pt-0">
-    <a href="/post/{{post.id}}">
-    <div class="bg-dark py-2 px-2 rounded-top">
-      <h5 class="card-title text-white">
-        {{post.post_title}}
-        <span class="right-container">Posted by {{post.user.username}} on {{format_date post.created_at}}</span>
-      </h5>
-    </div>
-
-    <div class="py-2 px-2 rounded-2">
-      <p class="card-text">
-        {{post.post_content}}
-      </p>
-    </div>
-    </a>
-
-  </div>
+{{#if logged_in}}
+<div class="row m-4">
+  <div class="col"><h3>All Posts</h3></div>
+  <div class="col"><a href="/new-post">
+      <button
+        class="btn btn-primary"
+        data-button="create"
+        data-button="new-post"
+      >Create new post</button>
+    </a></div>
 </div>
+{{else}}
+<div class="row m-2">
+  <h3>All Posts</h3>
+</div>
+{{/if}}
+
+
+
+{{#each posts as |post|}}
+  <div class="card mb-4" style="width: 50rem" id="post">
+    <div class="card-body px-0 pt-0">
+      <a href="/post/{{post.id}}">
+        <div class="bg-dark py-2 px-2 rounded-top">
+          <h5 class="card-title text-white">
+            {{post.post_title}}
+            <span class="right-container">Posted by
+              {{post.user.username}}
+              on
+              {{format_date post.created_at}}</span>
+          </h5>
+        </div>
+
+        <div class="py-2 px-2 rounded-2">
+          <p class="card-text">
+            {{post.post_content}}
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </div>
 {{/each}}

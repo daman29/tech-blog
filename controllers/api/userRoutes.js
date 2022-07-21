@@ -21,7 +21,7 @@ router.post("/login", async (req, res) => {
     const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
-      window.alert("Invalid username or password");
+
       res
         .status(400)
         .json({ message: "Incorrect username or password, please try again" });
@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      window.alert("Invalid username or password");
+
       res
         .status(400)
         .json({ message: "Incorrect username or password, please try again" });
@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.status(200).json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
     res.status(400).json(err);

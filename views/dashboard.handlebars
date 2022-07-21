@@ -1,11 +1,11 @@
 {{#if newUser}}
   <h3>So empty 😔. Create a new post below!</h3>
   <a href="/new-post">
-  <button
-    class="btn btn-primary"
-    data-button="create"
-    data-button="new-post"
-  >Create new post</button>
+    <button
+      class="btn btn-primary"
+      data-button="create"
+      data-button="new-post"
+    >Create new post</button>
   </a>
 
 {{else}}
@@ -25,14 +25,16 @@
           <p class="card-text">
             {{post.post_content}}
           </p>
-          <button
+          <a href="/edit-post/{{post.id}}"><button
             class="btn btn-primary"
             id="{{post.id}}"
             data-button="edit"
-          >Edit</button>
+          >Edit</button></a>
+          
           <button
             class="btn btn-danger right-container"
-            id="{{post.id}}"
+            id="delete-post"
+            data-postId="{{post.id}}"
             data-button="delete"
           >Delete</button>
         </div>
@@ -41,6 +43,13 @@
 
     </div>
   {{/each}}
+  <div class="mt-3"><a href="/new-post">
+      <button
+        class="btn btn-primary"
+        data-button="create"
+        data-button="new-post"
+      >Create new post</button>
+    </a></div>
 
-  <script src="/js/edit.js"></script>
+  <script src="/js/delete.js"></script>
 {{/if}}

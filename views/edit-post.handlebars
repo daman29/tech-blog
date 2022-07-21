@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-12">
+    <h2>Edit Post</h2>
+
+    <form class="form edit_form">
+        <h4>Post <span id="post-id">{{post.id}}</span></h4>
+      <div class="form-group">
+        <label for="post-title">Title:</label>
+        <input class="form-input" type="text" id="post-title" value="{{post.post_title}}"/>
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content:</label>
+        <input class="form-input" type="text" id="post-content" value="{{post.post_content}}"/>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Edit Post</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script src="/js/editPost.js"></script>

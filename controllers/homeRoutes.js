@@ -85,4 +85,23 @@ router.get("/new-post", withAuth, (req, res) => {
   });
 })
 
+router.get('/edit-post/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id
+      },
+    });
+
+    const post = postData.get({ plain: true });
+    res.render("edit-post", {
+      post,
+      logged_in: req.session.logged_in,
+    })
+
+  } catch (error) {
+    res.status(400).json(error);    
+  }
+})
+
 module.exports = router;
