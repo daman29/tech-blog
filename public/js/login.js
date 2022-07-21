@@ -40,7 +40,7 @@ const signupFormHandler = async (event) => {
       document.location.replace("/");
     } else {
       console.log(response)
-      alert(response.message);
+      alert("Please check length of password is min 8");
     }
   }
 };
