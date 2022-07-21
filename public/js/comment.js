@@ -5,6 +5,7 @@ const postId = document.location.pathname.split("/")[2];
 commentBtn.addEventListener("click", commentFunc);
 commentForm.addEventListener("submit", commentFormSubmit);
 
+// function to hide and show comment form
 function commentFunc(e) {
   e.preventDefault();
   if (commentForm.classList.contains("hide")) {
@@ -13,6 +14,7 @@ function commentFunc(e) {
   }
 }
 
+// async function to send comment date to backend
 async function commentFormSubmit(e) {
   e.preventDefault();
   if (commentForm.classList.contains("hide")) {
