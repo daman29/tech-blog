@@ -3,7 +3,7 @@
 ![badge for MIT](https://img.shields.io/badge/license-MIT-brightgreen)
 
 ## Description
-A basic CMS style tech blog. Allows users to add posts with title and content. Also users can comment on other posts. Users have access to a dashboard where they can edit or delete existing post and add a new post.
+A basic CMS style tech blog. Allows users to add posts with title and content. Also users can comment on other posts. Users have access to a dashboard where they can edit or delete existing post and add a new post. Technologies used: Express, node, handlebars, sequelize and MySQL
 
 
 ## Table of Contents
